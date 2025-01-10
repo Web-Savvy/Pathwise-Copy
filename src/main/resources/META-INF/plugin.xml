@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>com.letmedevelop.copyplugin</id>
+    <name>Pathwise Copy</name>
+    <vendor email="jadavram21@gmail.com" url="http://www.letmedevelop.com">Ram Jadav</vendor>
+    <description><![CDATA[
+      Pathwise Copy is a handy tool that automatically adds file paths as comments while copying code. Ideal for developers interacting with AI tools or sharing organized code snippets with teams.
+    ]]></description>
+
+    <!-- Remove PHP-specific dependency -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.xml</depends>
+    <depends>com.intellij.modules.json</depends>
+
+
+    <actions>
+        <action id="com.letmedevelop.PastePathAction" class="com.letmedevelop.PastePathAction" text="Paste Path at Top"
+                description="Pastes the relative file path at the top as a comment">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="com.letmedevelop.MultiFilePastePathAction"
+                class="com.letmedevelop.MultiFilePastePathAction"
+                text="Multi-File Paste Path"
+                description="Pastes paths at the top and copies the content of selected files.">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
